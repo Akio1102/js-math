@@ -34,6 +34,15 @@ function calcularTriangulo(lado1, lado2, base, altura) {
     area: (base * altura) / 2,
   };
 }
+
+function calcularAlturaTriangulo(lado1, base) {
+  if (lado1 == base) {
+    console.warn("Este no es un triángulo isosceles");
+  } else {
+    return (altura = Math.sqrt(Math.pow(lado1, 2) - Math.pow(base, 2) / 4));
+  }
+}
+
 console.log({
   ladoTriangulo1,
   ladoTriangulo2,
