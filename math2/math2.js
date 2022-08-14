@@ -30,8 +30,8 @@ Math2.calcularModa = function calcularModa(lista) {
 };
 
 Math2.calcularMediana = function calcularMediana(listaDesordenada) {
-  const lista = ordenarLista(listaDesordenada);
-  const listaEsPar = esPar(lista);
+  const lista = Math2.ordenarLista(listaDesordenada);
+  const listaEsPar = Math2.esPar(lista);
 
   if (listaEsPar) {
     const indexMitad1Par = lista.length / 2 - 1;
@@ -45,7 +45,7 @@ Math2.calcularMediana = function calcularMediana(listaDesordenada) {
     const listaMitades = [];
     listaMitades.push(lista[indexMitad1Par]);
     listaMitades.push(lista[indexMitad2Par]);
-    const mediaListaPar = calcularPromedio(listaMitades);
+    const mediaListaPar = Math2.calcularPromedio(listaMitades);
     return mediaListaPar;
   } else {
     const indexMitadImpar = Math.floor(lista.length / 2);
