@@ -1,11 +1,14 @@
-function esPar(lista) {
-  return !(lista.length % 2);
-}
-function esImPar(lista) {
-  return lista.length % 2;
-}
+const Math2 = {};
 
-function calcularModa(lista) {
+Math2.esPar = function esPar(lista) {
+  return !(lista.length % 2);
+};
+
+Math2.esImPar = function esImPar(lista) {
+  return lista.length % 2;
+};
+
+Math2.calcularModa = function calcularModa(lista) {
   const listaCount = {};
 
   for (let i = 0; i < lista.length; i++) {
@@ -24,9 +27,9 @@ function calcularModa(lista) {
   const moda = ListaMaxNumber[0];
   // console.log({ listaCount, listaArray, listaOrdenada, ListaMaxNumber });
   return moda;
-}
+};
 
-function calcularMediana(listaDesordenada) {
+Math2.calcularMediana = function calcularMediana(listaDesordenada) {
   const lista = ordenarLista(listaDesordenada);
   const listaEsPar = esPar(lista);
 
@@ -50,9 +53,9 @@ function calcularMediana(listaDesordenada) {
     console.log(mitadListaImpar);
     return mitadListaImpar;
   }
-}
+};
 
-function calcularPromedio(lista) {
+Math2.calcularPromedio = function calcularPromedio(lista) {
   // Forma de recorrer un Array
 
   //   let sumaLista = 0;
@@ -75,9 +78,9 @@ function calcularPromedio(lista) {
   const promedio = sumaLista / lista.length;
   console.log(promedio);
   return promedio;
-}
+};
 
-function ordenarLista(listaDesordenada) {
+Math2.ordenarLista = function ordenarLista(listaDesordenada) {
   // function ordenarListaSort(valorAcumulado, nuevoValor) {
   // if (valorAcumulado > nuevoValor) {
   //   return 1;
@@ -96,9 +99,13 @@ function ordenarLista(listaDesordenada) {
   const lista = listaDesordenada.sort((a, b) => a - b);
 
   return lista;
-}
-function ordenarListaBidimensional(listaDesordenada, i) {
+};
+
+Math2.ordenarListaBidimensional = function ordenarListaBidimensional(
+  listaDesordenada,
+  i
+) {
   const lista = listaDesordenada.sort((a, b) => a[i] - b[i]);
 
   return lista;
-}
+};
