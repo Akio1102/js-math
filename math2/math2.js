@@ -5,6 +5,27 @@ function esImPar(lista) {
   return lista.length % 2;
 }
 
+function calcularModa(lista) {
+  const listaCount = {};
+
+  for (let i = 0; i < lista.length; i++) {
+    const elemento = lista[i];
+
+    if (listaCount[elemento]) {
+      listaCount[elemento]++;
+    } else {
+      listaCount[elemento] = 1;
+    }
+  }
+
+  const listaArray = Object.entries(listaCount);
+  const listaOrdenada = ordenarListaBidimensional(listaArray, 1);
+  const ListaMaxNumber = listaOrdenada[listaOrdenada.length - 1];
+  const moda = ListaMaxNumber[0];
+  // console.log({ listaCount, listaArray, listaOrdenada, ListaMaxNumber });
+  return moda;
+}
+
 function calcularMediana(listaDesordenada) {
   const lista = ordenarLista(listaDesordenada);
   const listaEsPar = esPar(lista);
@@ -73,6 +94,11 @@ function ordenarLista(listaDesordenada) {
 
   // const lista = listaDesordenada.sort(ordenarListaSort);
   const lista = listaDesordenada.sort((a, b) => a - b);
+
+  return lista;
+}
+function ordenarListaBidimensional(listaDesordenada, i) {
+  const lista = listaDesordenada.sort((a, b) => a[i] - b[i]);
 
   return lista;
 }
