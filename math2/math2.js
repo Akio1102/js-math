@@ -50,6 +50,7 @@ Math2.calcularMediana = function calcularMediana(listaDesordenada) {
   } else {
     const indexMitadImpar = Math.floor(lista.length / 2);
     const mitadListaImpar = lista[indexMitadImpar];
+    console.log(indexMitadImpar);
     console.log(mitadListaImpar);
     return mitadListaImpar;
   }
@@ -76,7 +77,7 @@ Math2.calcularPromedio = function calcularPromedio(lista) {
   );
   //   const sumaLista = lista.reduce(sumarTodosElements); con invocaion de function
   const promedio = sumaLista / lista.length;
-  console.log(promedio);
+  // console.log(promedio);
   return promedio;
 };
 
